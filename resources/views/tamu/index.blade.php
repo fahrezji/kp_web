@@ -33,7 +33,7 @@
                 <img style="max-width:50px;max-height:50px" src="{{ url('gambar').'/'.$item->gambar }}">
             @endif
         </td> --}}
-        <th> </th>
+        <th> {{ $loop->iteration}} </th>
         <th>{{ $item->nama_tamu}}</th>
         <th>{{ $item->alamat}}</th>
         <th>{{ $item->email}}</th>
@@ -42,13 +42,15 @@
         <th>{{ $item->tanggal}}</th>
 
         <td>
-            <a class='btn btn-secondary btn-sm' href='{{url('/tamu/'.$item->id)}}'> Detail </a>
-            <a class='btn btn-warning btn-sm' href='{{url('/tamu/'.$item->id.'/edit')}}'> Edit </a>
+            {{-- <a class='btn btn-secondary btn-sm' href='{{url('/tamu/'.$item->id)}}'>  Detail</a> --}}
+            <a class='btn btn-warning btn-sm' href='{{url('/tamu/'.$item->id.'/edit')}}'> <i class="bi bi-pencil-square">
+                <img src="{{ asset('/assets/img/pencil-square.svg') }}"> Edit  </i></a>
 
             <form onsubmit="return confirm('Yakin Hapus Data Ini?')" class='d-inline' action="{{'/tamu/'.$item->id}}" method='post'>
                 @csrf
                 @method('DELETE')
-                <button class="btn btn-danger btn-sm" type="submit"> Hapus </button>
+                <button class="btn btn-danger btn-sm" type="submit"> <i class="bi bi-trash3"> <img src="{{ asset('/assets/img/trash3.svg') }}">
+                     Hapus </i> </button>
             </form>
         </td>
     </tr>
