@@ -19,7 +19,7 @@ class tamucontroller extends Controller
     public function index()
     {
         //
-        $data = tamu::orderby('id', 'desc')->paginate(5);
+        $data = tamu::orderby('id', 'desc')->paginate(7);
         return view('tamu.index')->with ('data',$data);
 
 

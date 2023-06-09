@@ -25,7 +25,7 @@
     </tr>
 </thead>
 <tbody>
-    @foreach ($data as $item )
+    @foreach ($data as $index => $item)
 
     <tr>
         {{-- <td>
@@ -33,7 +33,7 @@
                 <img style="max-width:50px;max-height:50px" src="{{ url('gambar').'/'.$item->gambar }}">
             @endif
         </td> --}}
-        <th> {{ $loop->iteration}} </th>
+        <th> {{ $index + $data ->firstItem() }} </th>
         <th>{{ $item->nama_tamu}}</th>
         <th>{{ $item->alamat}}</th>
         <th>{{ $item->email}}</th>
