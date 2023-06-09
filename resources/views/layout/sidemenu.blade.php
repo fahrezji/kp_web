@@ -14,7 +14,8 @@
 <li class="nav-header"> Master Data </li>
 <li class="nav-item">
     <a href="../../index.html" class="nav-link">
-        <i class="nav-icon fas fa-users"> </i>
+        <i class="bi bi-clipboard-data-fill"></i>
+        <img src="{{ asset('/assets/img/clipboard-data-fill.svg') }}">
         <p>
             Data
             <i class="right fas fa-angle-left"> </i>
@@ -24,7 +25,7 @@
 
         <li class="nav-item">
             <a href="{{ url('tamu')}}" class="nav-link">
-                <i class="far fa-circle nav-icon"> </i>
+                <i class="nav-icon fas fa-users"> </i>
                 <p> Tamu </p>
             </a>
         </li>

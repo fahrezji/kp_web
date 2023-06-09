@@ -29,7 +29,7 @@
                         <img src="{{asset ('/assets/img/logo.png')}}" alt="logo">
                     </div>
                     <div class="col-6 align-self-center text-right">
-                        <a href="/sesi/login" class="text-white lead">Login</a>
+                        <a href="/sesi" class="text-white lead">Login</a>
                     </div>
                 </div>
             </header>
