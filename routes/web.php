@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HalamanController;
+use App\Http\Controllers\komencontroller;
 use App\Http\Controllers\tamucontroller;
 use App\Http\Controllers\layoutcontroller;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\userscontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,23 +35,33 @@ Route::controller(layoutcontroller::class)->group(function(){
     Route::get('layout/home', 'home');
     Route::get('layout/index', 'index');
     Route::get('layout/frontend', 'frontend');
+    Route::get('layout/signin', 'signin');
+    Route::get('layout/signup', 'signup');
 });
 
 //route resource
 
 Route::resource('/posts', Postcontroller::class);
+Route::resource('/auth', SessionController::class);
+Route::resource('/komen', komencontroller::class);
 
 Route::get('/tentang',[HalamanController::class,'tentang']);
 Route::get('/kontak',[HalamanController::class,'kontak']);
 
+
+
+// Route::get('/users',[userscontroller::class,]);
 Route::get('/sesi',[SessionController::class, 'index'])->Middleware('isTamu');
-Route::post('/sesi/login', [SessionController::class, 'login'])->Middleware('isTamu');
+Route::post('log_process', [SessionController::class, 'login'])->Middleware('isTamu');
+Route::post('reg_process', [SessionController::class, 'create'])->Middleware('isTamu');
+// Route::post('komen', [komencontroller::class, 'komen']);
 Route::get('/sesi/logout', [ SessionController::class, 'logout']);
 Route::get('/sesi/register', [SessionController::class, 'register'])->Middleware('isTamu');
-Route::post('/sesi/create',[SessionController::class, 'create'])->Middleware('isTamu');
+// Route::post('/sesi/create',[SessionController::class, 'create'])->Middleware('isTamu');
 
-Route::get('/', function () {return view('layout/frontend');})->middleware('isTamu');
-
-
+Route::get('/', [layoutcontroller::class,'frontend'])->middleware('isTamu');
+Route::get('/users', function () {
+       return view('users.index');
+     });
 
 

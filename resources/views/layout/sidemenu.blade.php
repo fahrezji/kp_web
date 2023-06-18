@@ -29,6 +29,14 @@
                 <p> Tamu </p>
             </a>
         </li>
+
+        <li class="nav-item">
+            <a href="{{ url('users')}}" class="nav-link">
+                <i class="nav-icon fas fa-users"> </i>
+                <p> Kelola Profile </p>
+            </a>
+        </li>
+
     </ul>
 </li>
     </ul>
