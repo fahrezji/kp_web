@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 class SessionController extends Controller
 {
     function index(){
-        return view("sesi/index");
+        return view("layout.signin");
     }
     function login(Request $request){
 
@@ -29,7 +29,8 @@ class SessionController extends Controller
         'password' => $request->password
     ];
     if (Auth::attempt($infologin)){
-        return redirect('/layout/home')->with('success','Berhasil Login');
+        // dd($infologin);
+        return redirect('/layout/frontend')->with('success','Berhasil Login');
     }else {
         return redirect('sesi')->withErrors('Username atau Password Salah');
     }
@@ -70,7 +71,7 @@ class SessionController extends Controller
             'password' => ($request->password)
           ];
           if (Auth::attempt($infologin)){
-            return redirect('layout/home')->with('success', Auth::user()->name. ' Berhasil Login');
+            return redirect('layout/frontend')->with('success', Auth::user()->name. ' Berhasil Login');
           }else {
             return redirect('sesi')->withErrors('Username dan Password Salah');
           }
