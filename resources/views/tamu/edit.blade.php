@@ -12,17 +12,12 @@
         @method('put')
         <div class="mb-5 mt-5">
         <div class="mb-3">
-            <h1> Nama Tamu : {{$data->nama_tamu}}</h1>
+            <h1> Nama Tamu : {{$data->name}}</h1>
         </div>
 
         <div class="mb-3">
             <label for="nama_tamu" class="form-label"> Nama Tamu </label>
-            <input type="text" class="form-control" name='nama_tamu' id="nama_tamu" value="{{$data->nama_tamu}}">
-        </div>
-
-        <div class="mb-3">
-            <label for="alamat" class="form-label"> Alamat </label>
-            <input type="text" class="form-control" name='alamat' id="alamat" value="{{$data->alamat}}">
+            <input type="text" class="form-control" name='name' id="name" value="{{$data->name}}">
         </div>
 
         <div class="mb-3">
@@ -36,14 +31,10 @@
         </div>
 
         <div class="mb-3">
-            <label for="tujuan" class="form-label"> Tujuan </label>
-            <input type="text" class="form-control" name='tujuan' id="tujuan" value="{{$data->tujuan}}">
+            <label for="alamat" class="form-label"> Alamat </label>
+            <input type="text" class="form-control" name='alamat' id="alamat" value="{{$data->alamat}}">
         </div>
 
-        <div class="mb-3">
-            <label for="tanggal" class="form-label"> tanggal </label>
-            <input type="date" class="form-control" name='tanggal' id="tanggal" value="{{$data->tanggal}}">
-        </div>
 
         {{-- @if ($data->gambar)
         <div class="mb-3">

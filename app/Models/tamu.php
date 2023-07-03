@@ -12,12 +12,11 @@ class tamu extends Model
     protected $fillable=
     [
     'nama_tamu',
-    'alamat',
     'email',
     'telepon',
-    'tujuan',
-    'tanggal'
+    'created_at'
 
 
     ];
+
 }

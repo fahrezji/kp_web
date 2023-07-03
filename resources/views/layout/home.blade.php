@@ -9,30 +9,66 @@
 
     @section('konten')
 
-<div class="card">
-    <div class="card-header">
-      <h3 class="card-title">Anggota Kelompok : </h3>
+<!-- Main content -->
 
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-          <i class="fas fa-minus"></i>
-        </button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-    </div>
-    <div class="card-body">
-      Aji Fahreza <br>
-      Adilla Novira <br>
-      Muni Nurhalisa
-    </div>
-    <!-- /.card-body -->
-    <div class="card-footer">
-      Fitria Ingriyani <br>
-      Iqbal Al Farizi <br>
-      Wisnu Triatmojo
-    </div>
-    <!-- /.card-footer-->
-  </div>
+<section class="content">
+    <div class="container-fluid">
+      <h5 class="mb-2">Info Komentar</h5>
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-info"><i class="fas fa-comments"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Komentar</span>
+              <span class="info-box-number">{{ $komen_count }}</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-success"><i class="nav-icon fas fa-users"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Info Tamu</span>
+              <span class="info-box-number">{{ $user_count }}</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+
+        <!-- /.col -->
+        {{-- <div class="col-md-3 col-sm-6 col-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Uploads</span>
+              <span class="info-box-number">13,648</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-danger"><i class="far fa-star"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Likes</span>
+              <span class="info-box-number">93,139</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+      </div> --}}
+      <!-- /.row -->
+
   @endsection

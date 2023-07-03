@@ -191,11 +191,20 @@
                     @csrf
                   <div class="register_form signup_login_form">
                     <div class="form_item">
-                        <input type="name"  value="{{ Session::get('name') }}" name="name" placeholder="Nama">
+                        <input type="name"  value="{{ Session::get('name') }}" name="name" placeholder="Nama" maxlength="20">
                     </div>
                     <div class="form_item">
-                      <input type="email" value="{{ Session::get('email') }}" name="email" placeholder="Email">
+                      <input type="email" value="{{ Session::get('email') }}" name="email" placeholder="Email" maxlength="30">
                     </div>
+
+                    <div class="form_item">
+                        <input type="text" value="{{ Session::get('telepon') }}" name="telepon" placeholder="No Telepon" maxlength="13">
+                      </div>
+
+                      <div class="form_item">
+                        <input type="text" value="{{ Session::get('alamat') }}" name="alamat" placeholder="Alamat" maxlength="13">
+                      </div>
+
                     <div class="form_item">
                       <input type="password" name="password" placeholder="Buat Password">
                     </div>

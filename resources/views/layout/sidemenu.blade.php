@@ -11,11 +11,23 @@
           </p>
         </a>
       </li>
+
+
+<li class="nav-item">
+    <a href="{{ url('/layout/frontend') }}" class="nav-link">
+        <i class="fas fa-laptop"></i>
+        <p>
+            Frontend
+
+        </p>
+    </a>
+</li>
+
 <li class="nav-header"> Master Data </li>
 <li class="nav-item">
     <a href="../../index.html" class="nav-link">
-        <i class="bi bi-clipboard-data-fill"></i>
-        <img src="{{ asset('/assets/img/clipboard-data-fill.svg') }}">
+        <i class="fas fa-clipboard-list"></i>
+
         <p>
             Data
             <i class="right fas fa-angle-left"> </i>
@@ -30,10 +42,12 @@
             </a>
         </li>
 
+
+
         <li class="nav-item">
-            <a href="{{ url('users')}}" class="nav-link">
-                <i class="nav-icon fas fa-users"> </i>
-                <p> Kelola Profile </p>
+            <a href="{{ url('komen')}}" class="nav-link">
+                <i class="fas fa-comments"> </i>
+                <p> Komen </p>
             </a>
         </li>
 

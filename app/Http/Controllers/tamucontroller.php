@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\tamu;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
@@ -19,7 +20,7 @@ class tamucontroller extends Controller
     public function index()
     {
         //
-        $data = tamu::orderby('id', 'desc')->paginate(7);
+        $data = User::orderby('id', 'desc')->paginate(7);
         return view('tamu.index')->with ('data',$data);
 
 
@@ -47,30 +48,30 @@ class tamucontroller extends Controller
         //
 
         // Session::flash('id', $request->id);
-        Session::flash('nama_tamu', $request->nama_tamu);
-        Session::flash('alamat', $request->alamat);
+        Session::flash('name', $request->name);
         Session::flash('email', $request->email);
         Session::flash('telepon', $request->telepon);
-        Session::flash('tujuan', $request->tujuan);
-        Session::flash('tanggal', $request->tanggal);
+        Session::flash('alamat', $request->alamat);
+
+
 
 
          $request->validate([
-        'nama_tamu' => 'required',
-        'alamat' => 'required',
+        'name' => 'required',
         'email'=> 'required',
         'telepon'=> 'required',
-        'tujuan'=> 'required',
-        'tanggal'=> 'required',
+        'alamat'=> 'required',
+
+
 
 
          ], [
-            'nama_tamu.required' => 'Nama tamu Wajib Diisi',
-            'alamat.required' => 'Alamat tamu Wajib Diisi',
+            'name.required' => 'Nama tamu Wajib Diisi',
             'email.required' => 'Email tamu Wajib Diisi',
             'telepon.required' => 'Telepon tamu Wajib Diisi',
-            'tujuan.required' => 'Deksripsi tamu Wajib Diisi',
-            'tanggal.required' => 'tanggal tamu Wajib Diisi'
+            'alamat.required' => 'Alamat tamu Wajib Diisi',
+
+
 
          ]
 
@@ -82,17 +83,17 @@ class tamucontroller extends Controller
         //  $foto_file->move(public_path('gambar'),$gambar_nama);
 
          $data=[
-             'nama_tamu'=> $request->input('nama_tamu'),
-             'alamat'=> $request->input('alamat'),
+             'name'=> $request->input('name'),
              'email'=> $request->input('email'),
              'telepon'=> $request->input('telepon'),
-             'tujuan'=> $request->input('tujuan'),
-             'tanggal'=> $request->input('tanggal')
+             'alamat'=> $request->input('alamat'),
+
+
 
             //  'gambar' => $gambar_nama
 
          ];
-         tamu::create($data);
+         User::create($data);
          return redirect('/tamu')->with('success', 'Berhasil Melakukan Input Data');
     }
 
@@ -105,7 +106,7 @@ class tamucontroller extends Controller
     public function show($id)
     {
         //
-        $data = tamu::where('id', $id)->first();
+        $data = User::where('id', $id)->first();
         return view('tamu/show')->with('data', $data);
     }
 
@@ -118,7 +119,7 @@ class tamucontroller extends Controller
     public function edit($id)
     {
         //
-        $data = tamu::where('id', $id)->first();
+        $data = User::where('id', $id)->first();
         return view('tamu/edit')->with('data', $data);
     }
 
@@ -133,37 +134,37 @@ class tamucontroller extends Controller
     {
         //
         $request->validate([
-            'nama_tamu' => 'required',
-            'alamat' => 'required',
+            'name' => 'required',
             'email'=> 'required',
             'telepon'=> 'required',
-            'tujuan'=> 'required',
-            'tanggal'=> 'required',
+            'alamat'=> 'required',
+
+
 
 
 
              ], [
-                'nama_tamu.required' => 'Nama tamu Wajib Diisi',
-                'alamat.required' => 'Alamat tamu Wajib Diisi',
+                'name.required' => 'Nama tamu Wajib Diisi',
                 'email.required' => 'Email tamu Wajib Diisi',
                 'telepon.required' => 'Telepon tamu Wajib Diisi',
-                'tujuan.required' => 'Deksripsi tamu Wajib Diisi',
-                'tanggal.required' => 'tanggal tamu Wajib Diisi',
+                'alamat.required' => 'Alamat tamu Wajib Diisi',
+
+
 
 
              ]
 
          );
          $data=[
-            'nama_tamu'=> $request->input('nama_tamu'),
-            'alamat'=> $request->input('alamat'),
+            'name'=> $request->input('name'),
             'email'=> $request->input('email'),
             'telepon'=> $request->input('telepon'),
-            'tujuan'=> $request->input('tujuan'),
-            'tanggal'=> $request->input('tanggal'),
+            'alamat'=> $request->input('alamat'),
+
+
 
          ];
-    tamu::where('id', $id)->update($data);
+    User::where('id', $id)->update($data);
     return redirect('/tamu')->with('success', 'Berhasil Melakukan Update Data');
 }
 
@@ -175,13 +176,13 @@ class tamucontroller extends Controller
      */
     public function destroy($id)
     {
-        //
-        $data= tamu::where('id', $id)->delete();
+
+        $data= User::where('id', $id)->delete();
 
         // $data_gambar = tamu::where('id', $id)->first();
         // File::delete(public_path('gambar'). '/'. $data_gambar->gambar);
 
-       tamu::where('id', $id)->delete();
+       User::where('id', $id)->delete();
         return redirect('/tamu')->with('success', 'Berhasil Hapus Data');
     }
 }
