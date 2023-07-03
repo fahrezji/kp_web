@@ -5,17 +5,16 @@
     @endsection
 
     @section('konten')
-<a href="/tamu/create" class="btn btn-primary"> +Tambah Data Daftar Tamu </a>
+{{-- <a href="/tamu/create" class="btn btn-primary"> +Tambah Data Daftar Tamu </a> --}}
 
 <table class="table">
 <thead>
     <tr>
         <th> No </th>
         <th>Nama Tamu</th>
-        <th>Alamat</th>
         <th>Email</th>
         <th>No Telepon</th>
-        <th>Tujuan</th>
+        <th>Alamat</th>
         <th>Tanggal</th>
         <th colspan="2">Aksi</th>
         {{-- <td>
@@ -34,12 +33,11 @@
             @endif
         </td> --}}
         <th> {{ $index + $data ->firstItem() }} </th>
-        <th>{{ $item->nama_tamu}}</th>
-        <th>{{ $item->alamat}}</th>
+        <th>{{ $item->name}}</th>
         <th>{{ $item->email}}</th>
         <th>{{ $item->telepon}}</th>
-        <th>{{ $item->tujuan}}</th>
-        <th>{{ $item->tanggal}}</th>
+        <th>{{ $item->alamat}}</th>
+        <th>{{ date('d-m-Y', strtotime($item->created_at))}}</th>
 
         <td>
             {{-- <a class='btn btn-secondary btn-sm' href='{{url('/tamu/'.$item->id)}}'>  Detail</a> --}}

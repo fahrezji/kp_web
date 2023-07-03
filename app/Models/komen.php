@@ -14,9 +14,13 @@ class komen extends Model
     'nama',
     'email',
     'komentar',
-    'gambar'
 
 
 
+
+
+    ];
+    protected $dates =[
+        'created_at'
     ];
 }

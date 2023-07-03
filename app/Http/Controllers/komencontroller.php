@@ -15,7 +15,8 @@ class komencontroller extends Controller
      */
     public function index()
     {
-        //
+        $data = komen::orderby('id', 'desc')->paginate(7);
+        return view('komen.index')->with ('data',$data);
     }
 
     /**
@@ -25,7 +26,7 @@ class komencontroller extends Controller
      */
     public function create()
     {
-        return view('/layout/frontend');
+        return view('/komen/create');
     }
 
     /**
@@ -44,7 +45,7 @@ class komencontroller extends Controller
             'nama' => 'required',
             'email'=> 'required',
             'komentar' => 'required',
-            'gambar' => 'image | file | max:2048'
+            // 'gambar' => 'image | file | max:2048'
         ]);
 
         $data=[
@@ -54,10 +55,10 @@ class komencontroller extends Controller
 
         ];
 
-        if ($request->file('gambar')){
-            $data['gambar'] = $request->file('gambar')->store('gambar');
+        // if ($request->file('gambar')){
+        //     $data['gambar'] = $request->file('gambar')->store('gambar');
 
-        }
+        // }
 
         komen::create($data);
         return redirect('/')->with('success', 'Berhasil Menginput Data Komentar');
@@ -71,8 +72,8 @@ class komencontroller extends Controller
      */
     public function show($id)
     {
-         $data = komen::where('id', $id)->first();
-        dd($data);
+        $data = komen::where('id', $id)->first();
+        return view('komen/index')->with('data', $data);
         //  return view('komen/show' , $data);
     }
 
@@ -107,6 +108,12 @@ class komencontroller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data= komen::where('id', $id)->delete();
+
+        // $data_gambar = tamu::where('id', $id)->first();
+        // File::delete(public_path('gambar'). '/'. $data_gambar->gambar);
+
+       komen::where('id', $id)->delete();
+        return redirect('/komen')->with('success', 'Berhasil Hapus Data');
     }
 }

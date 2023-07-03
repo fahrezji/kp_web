@@ -192,7 +192,7 @@
                     @csrf
                   <div class="register_form signup_login_form">
                     <div class="form_item">
-                      <input type="email" value="{{ Session::get('email') }}" name="email" placeholder="Email">
+                      <input type="email" value="{{ Session::get('email') }}" name="email" placeholder="Email" maxlength="30">
                     </div>
                     <div class="form_item">
                       <input type="password" name="password" placeholder="**********">

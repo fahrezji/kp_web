@@ -30,7 +30,12 @@ class SessionController extends Controller
     ];
     if (Auth::attempt($infologin)){
         // dd($infologin);
-        return redirect('/layout/frontend')->with('success','Berhasil Login');
+        if(Auth::user()->level == 'Admin'){
+            return redirect('/layout/home')->with('success','Berhasil Login');
+        }else{
+            return redirect('/')->with('success','Berhasil Login');
+        }
+
     }else {
         return redirect('sesi')->withErrors('Username atau Password Salah');
     }
@@ -38,7 +43,7 @@ class SessionController extends Controller
     }
     public function logout(){
         Auth::logout();
-        return redirect('/sesi')->with('Success', 'Berhasil Logout');
+        return redirect('/')->with('Success', 'Berhasil Logout');
     }
     public function register(){
         return view('sesi/register');
@@ -46,10 +51,14 @@ class SessionController extends Controller
     public function create(Request $request){
         Session::flash('name', $request->input('name'));
         Session::flash('email', $request->input('email'));
+        Session::flash('telepon', $request->input('telepon'));
+        Session::flash('alamat', $request->input('alamat'));
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:5'
+            'password' => 'required|min:5',
+            'telepon' => 'required|max:13',
+            'alamat' => 'required'
 
         ],[
             'name.required' => 'Nama Wajib Diisi',
@@ -58,12 +67,17 @@ class SessionController extends Controller
             'email.unique' => 'Email Anda Sudah Digunakan',
             'password.required' => 'Password Wajib Diisi',
             'password.min' => 'Minimum Password 5 Karakter',
+            'telepon.required' => 'No Telepon Wajib Diisi',
+            'telepon.max' => 'No Telepon Maksimal 13 Karakter',
+            'alamat.required' => 'Alamat Wajib Diisi'
         ]);
         $data =[
             'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
+            'telepon' => $request->telepon,
+            'alamat' => $request->alamat
           ];
           User::create($data);
           $infologin=[
@@ -71,7 +85,7 @@ class SessionController extends Controller
             'password' => ($request->password)
           ];
           if (Auth::attempt($infologin)){
-            return redirect('layout/frontend')->with('success', Auth::user()->name. ' Berhasil Login');
+            return redirect('/layout/frontend')->with('success', Auth::user()->name. ' Berhasil Login');
           }else {
             return redirect('sesi')->withErrors('Username dan Password Salah');
           }
