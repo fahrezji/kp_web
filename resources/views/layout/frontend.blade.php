@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>STMIK</title>
+    <title>Tabel Data Informatika</title>
     <meta name="description" content="Free bootstrap template Atlas">
 
     {{-- link css header --}}
@@ -234,12 +234,12 @@
 
 <body>
     <!-- banner -->
-    <div class="jumbotron jumbotron-fluid" id="banner" style="background-image: url({{ asset ('assets/img/wisuda3.jpg')}}) ; background-size:cover;">
+    <div class="jumbotron jumbotron-fluid" id="banner" style="background-image: url({{ asset ('assets/img/tdi3.jpg')}}) ; background-size:cover;">
         <div class="container text-center text-md-left">
             <header>
                 <div class="row justify-content-between">
                     <div class="col-2">
-                        <img src="{{asset ('/assets/img/logo.png')}}" alt="logo">
+                    <!-- <img src="{{ asset('/assets/img/logo_tdi.png') }}" alt="logo" style="width: 100px; height: auto;"> -->
                     </div>
                     <div class="col-6 align-self-center text-right">
                         {{-- <a href="/sesi" class="text-white lead">Login</a> --}}
@@ -247,36 +247,36 @@
                 </div>
             </header>
             <h1 data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="display-3 text-white font-weight-bold my-5">
-            	STMIK<br>
-            	MARDIRA
+            	TABEL DATA<br>
+            	INFORMATIKA
             </h1>
-            <p data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="lead text-white my-4">
-                Mau kuliah tapi masih bingung memilih kampus untuk kuliah karena sudah bekerja? <br>
-                Bingung mencari kampus jurusan informatika yang berlokasi di Bandung? <br>
-                Jangan khawatir karena ada STMIK Mardira
+            <p data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="lead my-4 text-shadow">
+                Mau magang tapi masih bingung memilih perusahaan untuk magang karena belum terlalu bisa ngoding? <br>
+                Bingung mencari tempat magang jurusan informatika yang berlokasi di Bandung? <br>
+                Jangan khawatir karena ada Tabel Data Informatika
             </p>
             {{-- <a href="/sesi/register" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
             class="btn my-4 font-weight-bold atlas-cta cta-green">Register</a> --}}
         </div>
     </div>
+    
     <!-- three-blcok -->
     <div class="container my-5 py-2" id="fasilitas">
-        <h2 class="text-center font-weight-bold my-5">Fasilitas</h2>
+        <h2 class="text-center font-weight-bold my-5">Lowongan Internship</h2>
         <div class="row">
             <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
-                <img src="{{asset ('/assets/img/lab.png')}}" alt="Anti-spam" class="mx-auto" width="300px">
-                <h4 class="mt-4">Lab Komputer</h4>
+                <img src="{{asset ('/assets/img/fullstak.jpg')}}" alt="Anti-spam" class="mx-auto" width="1000px">
+                <h4 class="mt-4"> Fullstack Developer </h4>
 
             </div>
             <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
-                <img src="{{asset ('/assets/img/badminton.png')}}" alt="Phishing Detect" class="mx-auto" width="300px">
-                <h4 class="mt-4">Gor</h4>
+                <img src="{{asset ('/assets/img/admin.jpg')}}" alt="Phishing Detect" class="mx-auto" width="1000px">
+                <h4 class="mt-4"> Admin Kantor </h4>
 
             </div>
             <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
-                <img src="{{asset ('/assets/img/mosque2.png')}}" alt="Smart Scan" class="mx-auto" width="320px">
-                <h4>Mushola</h4>
-
+                <img src="{{asset ('/assets/img/platform.jpg')}}" alt="Smart Scan" class="mx-auto" width="1000px">
+                <h4 class="mt-4"> Platrofm Engineer </h4>
             </div>
         </div>
     </div>
