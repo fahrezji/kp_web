@@ -4,7 +4,7 @@
 @yield('konten')
 
 @section('title')
-    Selamat Datang di Web UAS Kelompok 3
+    Selamat Datang di Web Tamu Tabel Data Informatika
     @endsection
 
     @section('konten')

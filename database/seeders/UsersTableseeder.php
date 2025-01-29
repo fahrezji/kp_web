@@ -18,8 +18,9 @@ class UsersTableseeder extends Seeder
     {
         DB::table('users')->insert([
             'name'=> 'aji',
-            'email'=> 'fahrezji7@gmail.com',
-            'password'=> Hash::make('12345')
+            'email'=> 'fahrezaa80@gmail.com',
+            'password'=> Hash::make('12345'),
+            'level' => 'admin',  // Set level sebagai 'admin'
             ]);
     }
 }

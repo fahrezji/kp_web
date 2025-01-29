@@ -53,7 +53,7 @@
             <div class="col col-lg-3 col-5">
               <div class="site_logo">
                 <a class="site_link" href="index.html">
-                  {{-- <img src="assets/images/logo/site_logo.svg" alt="Collab - Online Learning Platform"> --}}
+                   <!-- <img src="{{ asset('/assets/img/logo_tdi.png') }}" alt="Tabel Data Informatika">  -->
                 </a>
               </div>
             </div>
@@ -66,17 +66,17 @@
                       <a class="nav-link" href="/layout/frontend" id="home_submenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
                       <ul class="dropdown-menu" aria-labelledby="home_submenu">
                         <li><a href="#banner">Home</a></li>
-                        <li><a href="#fasilitas">Fasilitas</a></li>
+                        <li><a href="#lowongan">Lowongan</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
                       <a class="nav-link" href="#feature-first" id="service_submenu">
-                        Jurusan
+                        Artikel
                       </a> --}}
                       {{-- <ul class="dropdown-menu" aria-labelledby="service_submenu"> --}}
                         {{-- <li class="dropdown">
                           <a class="nav-link" href="#" id="courses_layout_submenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Jurusan
+                            Artikel
                           </a>
                           <ul class="dropdown-menu" aria-labelledby="courses_layout_submenu">
                             <li><a href="course.html">Courses Grid</a></li>
@@ -94,10 +94,10 @@
                         </li>
                       </ul>
                     </li> --}}
-                    {{-- <li class="dropdown">
+                    <!-- {{-- <li class="dropdown">
                       <a class="nav-link" href="#feature-last" id="pages_submenu">
                         Pendaftaran
-                      </a> --}}
+                      </a> --}} -->
                       {{-- <ul class="dropdown-menu" aria-labelledby="pages_submenu">
                         <li><a href="about.html">About</a></li>
                         <li class="dropdown">
@@ -142,10 +142,16 @@
                 <nav id="navbar" class="navbar">
                     <ul>
                       <li><a href="#banner" class="active">Home</a></li>
-                      <li><a href="#fasilitas">Fasilitas</a></li>
-                      <li><a href="#feature-first">Jurusan</a></li>
-                      <li><a href="#feature-last">Pendaftaran</a></li>
+                      <li><a href="#lowongan">Lowongan</a></li>
+                      <li><a href="#feature-first">Artikel</a></li>
+                      <!-- <li><a href="#feature-last">Pendaftaran</a></li> -->
                       <li><a href="#testimonials">Komentar</a></li>
+
+                      <!-- {{-- Menu Backend hanya muncul jika user adalah admin --}} -->
+                      @if(Auth::check() && Auth::user()->level === 'Admin')
+                      <li><a href="{{ url ('layout/home')}}">Backend</a></li>
+                      @endif
+
                       {{-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                             class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
@@ -251,7 +257,7 @@
             	INFORMATIKA
             </h1>
             <p data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="lead my-4 text-shadow">
-                Mau magang tapi masih bingung memilih perusahaan untuk magang karena belum terlalu bisa ngoding? <br>
+                Mau bekerja tapi masih bingung memilih perusahaan karena belum terlalu bisa ngoding? <br>
                 Bingung mencari tempat magang jurusan informatika yang berlokasi di Bandung? <br>
                 Jangan khawatir karena ada Tabel Data Informatika
             </p>
@@ -261,70 +267,98 @@
     </div>
     
     <!-- three-blcok -->
-    <div class="container my-5 py-2" id="fasilitas">
-        <h2 class="text-center font-weight-bold my-5">Lowongan Internship</h2>
-        <div class="row">
-            <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
-                <img src="{{asset ('/assets/img/fullstak.jpg')}}" alt="Anti-spam" class="mx-auto" width="1000px">
+    <div class="container my-5 py-2" id="lowongan"> 
+    <h2 class="text-center font-weight-bold my-5">Lowongan Pekerjaan</h2>
+    <div class="row flex-nowrap overflow-auto">
+
+        <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kiki.rizki@tabeldata.com&su=Lamaran%20Fullstack%20Developer" target="_blank">
+                <img src="{{ asset('/assets/img/fullstak.jpg') }}" alt="Fullstack Developer" class="mx-auto" width="300px">
                 <h4 class="mt-4"> Fullstack Developer </h4>
-
-            </div>
-            <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
-                <img src="{{asset ('/assets/img/admin.jpg')}}" alt="Phishing Detect" class="mx-auto" width="1000px">
-                <h4 class="mt-4"> Admin Kantor </h4>
-
-            </div>
-            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
-                <img src="{{asset ('/assets/img/platform.jpg')}}" alt="Smart Scan" class="mx-auto" width="1000px">
-                <h4 class="mt-4"> Platrofm Engineer </h4>
-            </div>
+            </a>
         </div>
+
+        <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kiki.rizki@tabeldata.com&su=Lamaran%20Admin%20Kantor" target="_blank">
+                <img src="{{ asset('/assets/img/admin.jpg') }}" alt="Admin Kantor" class="mx-auto" width="300px">
+                <h4 class="mt-4"> Admin Kantor </h4>
+            </a>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kiki.rizki@tabeldata.com&su=Lamaran%20Platform%20Engineer" target="_blank">
+                <img src="{{ asset('/assets/img/platform.jpg') }}" alt="Platform Engineer" class="mx-auto" width="300px">
+                <h4 class="mt-4"> Platform Engineer </h4>
+            </a>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kiki.rizki@tabeldata.com&su=Lamaran%20Jasper%20Programmer" target="_blank">
+                <img src="{{ asset('/assets/img/jasper.jpg') }}" alt="Jasper Programmer" class="mx-auto" width="300px">
+                <h4 class="mt-4"> Jasper Programmer </h4>
+            </a>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kiki.rizki@tabeldata.com&su=Lamaran%20Infra%20Operation" target="_blank">
+                <img src="{{ asset('/assets/img/infra.jpg') }}" alt="Infra Operation" class="mx-auto" width="300px">
+                <h4 class="mt-4"> Infra Operation </h4>
+            </a>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kiki.rizki@tabeldata.com&su=Lamaran%20SQL%20Developer" target="_blank">
+                <img src="{{ asset('/assets/img/sqldev.jpg') }}" alt="SQL Developer" class="mx-auto" width="300px">
+                <h4 class="mt-4"> SQL Developer </h4>
+            </a>
+        </div>
+
     </div>
+</div>
+
     <!-- feature (skew background) -->
     <div class="jumbotron jumbotron-fluid feature" id="feature-first">
-        <div class="container my-5">
-            <div class="row justify-content-between text-center text-md-left">
-                <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6">
-                    <h2 class="font-weight-bold"> Jurusan </h2>
-                    <p class="my-4 mb-3"> <h4>Kampus STMIK Mardira Indonesia membuka kelas reguler pagi dan reguler sore untuk karyawan. <br>
-                    Dengan pilihan jurusan yaitu : <br> <br>
-                    Teknik Informatika S1 <br>
-                    Teknik Informatika D3 <br>
-                    Komputerisasi Akuntansi D3 <br>
-                    Manajemen Informatika D3 </h4>
-                    </p>
-                    {{-- <a href="/sesi/register" class="btn my-4 font-weight-bold atlas-cta cta-blue">Register</a> --}}
-                </div>
-                <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center">
-                    <img src="{{asset ('/assets/img/jur.jpg')}}" alt="Take a look inside" class="mx-auto d-block">
-                </div>
+    <div class="container my-5">
+        <div class="row justify-content-between text-center text-md-left">
+            <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6">
+                <h2 class="font-weight-bold">Tabel Data Ikut Menyukseskan Event Job Fair di Itenas</h2>
+                <p class="text-muted">October 31, 2023</p>
+                <p class="my-4">
+                Banyak lowongan pekerjaan yang tersebar, terutama dengan bantuan teknologi sangat memudahkan pencari pekerjaan. 
+                Namun sedikit sulit untuk bisa lolos tahapan saat melamar.
+                Salah satu media untuk mencari pekerjaan adalah dengan menghadiri event Job Fair.
+                Insititut Teknologi Nasional atau yang biasa kita kenal dengan Itenas mengundang Tabel Data untuk berpatisipasi
+                pada event Job Fair yang diadakan di Itenas, Bandung.
+                </p>
+                <a href="/artikel/tabel-data-job-fair" class="btn my-4 font-weight-bold atlas-cta cta-blue">Baca Selengkapnya</a>
+            </div>
+            <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center">
+                <img src="{{ asset('/assets/img/itenas2.jpeg') }}" alt="Event Job Fair" class="mx-auto d-block">
             </div>
         </div>
     </div>
+</div>
+
     <!-- feature (green background) -->
     <div class="jumbotron jumbotron-fluid feature" id="feature-last">
-        <div class="container">
-            <div class="row justify-content-between text-center text-md-left">
-                <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 flex-md-last">
-                    <h2 class="font-weight-bold">Seputar Penerimaan Mahasiswa Baru</h2>
-                    <p class="my-4">
-                       <h4> Barisan sakit hati ditolak kampus negeri <br> <br>
-                        Jangan kecil hati, ada STMIK Mardira Indonesia yang siap menemani menggapai mimpi. <br> <br>
-                        Jangan bersedih buat temen-temen disini yang tidak keterima di kampus negeri, karena kesuksesan kita yang menciptakan sendiri. <br>
-                        Bersama STMIK Mardira Indonesia, yuk raih suksesmu! <br> <br>
-                        Segera daftarkan dirimu untuk masuk tanpa tes ke STMIK MI! <br>
-
-
-                    </h4>
-                    </p>
-                    {{-- <a href="/sesi/register" class="btn my-4 font-weight-bold atlas-cta cta-blue">Register</a> --}}
-                </div>
-                <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center flex-md-first">
-                    <img src="{{asset ('/assets/img/daftar.jpg')}}" alt="Safe and reliable" class="mx-auto d-block">
-                </div>
+    <div class="container">
+        <div class="row justify-content-between text-center text-md-left">
+            <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 flex-md-last">
+                <h2 class="font-weight-bold">TDI Berpartisipasi dalam Acara Hybrid Multicloud Driving Business Transformation</h2>
+                <p class="text-muted">October 31, 2023</p>
+                <p class="my-4">
+                    Acara Hybrid Multicloud Driving Business Transformation yang diadakan pada 31 Oktober 2023 menghadirkan berbagai inovasi terbaru di dunia cloud computing. 
+                    TDI turut serta dalam acara ini dengan memaparkan strategi implementasi hybrid multicloud dalam mendukung transformasi bisnis yang lebih efisien dan fleksibel.
+                </p>
+                <a href="/artikel/tdi-hybrid-multicloud" class="btn my-4 font-weight-bold atlas-cta cta-blue">Baca Selengkapnya</a>
+            </div>
+            <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center flex-md-first">
+                <img src="{{ asset('/assets/img/hybrid.jpg') }}" alt="Hybrid Multicloud Event" class="mx-auto d-block">
             </div>
         </div>
     </div>
+</div>
+
 
     <!-- price table -->
     {{-- <div class="container my-5 py-2" id="price-table">
@@ -509,14 +543,10 @@
             <div class="row justify-content-between">
                 <div class="col-md-6 text-white">
                     <h2 class="font-weight-bold">Kontak Kita</h2>
-                    {{-- <p class="my-4">
-                        Te iisque labitur eos, nec sale argumentum scribentur,
-                        <br> augue disputando in vim. Erat fugit sit at, ius lorem.
-                    </p> --}}
                     <ul class="list-unstyled">
-                        <li>Email : info@stmik-mi.ac.id</li>
-                        <li>Phone : +62 (022) 523 0382 </li>
-                        <li>Address :Jl. Soekarno-Hatta No. 211 Leuwipanjang Bandung - Jawa Barat</li>
+                        <li>Telepone : (022) 4231480</li>
+                        <li>E-mail: Info@tabeldata.com </li>
+                        <li>Alamat : Jl. Pratista Raya No.17, Antapani Kidul, Kec. Antapani, Kota Bandung, Jawa Barat 40291</li>
                     </ul>
                 </div>
                 @if (Auth::user())
@@ -561,18 +591,18 @@
 
                 </div>
                 <div class="col-md-6 align-self-center text-center text-md-right my-2" id="social-media">
-                    <a href="https://www.facebook.com/stmik.mi" target="blank" class="d-inline-block text-center ml-2">
-                    	<i class="fa fa-facebook" aria-hidden="true"></i>
+                    <a href="https://www.youtube.com/@tabeldatainformatika7978" target="blank" class="d-inline-block text-center ml-2">
+                    	<i class="fa fa-youtube-play" aria-hidden="true"></i>
                     </a>
-                    <a href="https://www.instagram.com/stmikmardira/" target="blank" class="d-inline-block text-center ml-2">
+                    <a href="https://www.instagram.com/tabeldata" target="blank" class="d-inline-block text-center ml-2">
                     	<i class="fa fa-instagram" aria-hidden="true"></i>
                     </a>
-                    <a href="https://twitter.com/stmikmardira" target="blank" class="d-inline-block text-center ml-2">
-                    	<i class="fa fa-twitter" aria-hidden="true"></i>
+                    <a href="https://www.linkedin.com/company/pt-tabel-data-informatika/" target="blank" class="d-inline-block text-center ml-2">
+                    	<i class="fa fa-linkedin" aria-hidden="true"></i>
                     </a>
-                    <a href="https://stmik-mi.ac.id/" target="blank" class="d-inline-block text-center ml-2">
+                    <!-- <a href="https://stmik-mi.ac.id/" target="blank" class="d-inline-block text-center ml-2">
                     	<i class="fa fa-globe" aria-hidden="true"></i>
-                    </a>
+                    </a> -->
                 </div>
             </div>
         </div>
