@@ -361,7 +361,7 @@
 
 
     <!-- price table -->
-    {{-- <div class="container my-5 py-2" id="price-table">
+    <!-- {{-- <div class="container my-5 py-2" id="price-table">
         <h2 class="text-center font-weight-bold d-block mb-3">Komentar Tamu</h2>
 
         <div class="row">
@@ -382,7 +382,7 @@
 
         </div>
 
-    </div> --}}
+    </div> --}} -->
 
     {{-- isi komentar --}}
     <!-- ======= Testimonials Section ======= -->
