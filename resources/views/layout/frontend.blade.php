@@ -274,42 +274,42 @@
         <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kiki.rizki@tabeldata.com&su=Lamaran%20Fullstack%20Developer" target="_blank">
                 <img src="{{ asset('/assets/img/fullstak.jpg') }}" alt="Fullstack Developer" class="mx-auto" width="300px">
-                <h4 class="mt-4"> Fullstack Developer </h4>
+                <h4 class="mt-4" style="color: black;"> Fullstack Developer </h4>
             </a>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kiki.rizki@tabeldata.com&su=Lamaran%20Admin%20Kantor" target="_blank">
                 <img src="{{ asset('/assets/img/admin.jpg') }}" alt="Admin Kantor" class="mx-auto" width="300px">
-                <h4 class="mt-4"> Admin Kantor </h4>
+                <h4 class="mt-4" style="color: black;"> Admin Kantor </h4>
             </a>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kiki.rizki@tabeldata.com&su=Lamaran%20Platform%20Engineer" target="_blank">
                 <img src="{{ asset('/assets/img/platform.jpg') }}" alt="Platform Engineer" class="mx-auto" width="300px">
-                <h4 class="mt-4"> Platform Engineer </h4>
+                <h4 class="mt-4" style="color: black;"> Platform Engineer </h4>
             </a>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kiki.rizki@tabeldata.com&su=Lamaran%20Jasper%20Programmer" target="_blank">
                 <img src="{{ asset('/assets/img/jasper.jpg') }}" alt="Jasper Programmer" class="mx-auto" width="300px">
-                <h4 class="mt-4"> Jasper Programmer </h4>
+                <h4 class="mt-4" style="color: black;"> Jasper Programmer </h4>
             </a>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kiki.rizki@tabeldata.com&su=Lamaran%20Infra%20Operation" target="_blank">
                 <img src="{{ asset('/assets/img/infra.jpg') }}" alt="Infra Operation" class="mx-auto" width="300px">
-                <h4 class="mt-4"> Infra Operation </h4>
+                <h4 class="mt-4" style="color: black;"> Infra Operation </h4>
             </a>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kiki.rizki@tabeldata.com&su=Lamaran%20SQL%20Developer" target="_blank">
                 <img src="{{ asset('/assets/img/sqldev.jpg') }}" alt="SQL Developer" class="mx-auto" width="300px">
-                <h4 class="mt-4"> SQL Developer </h4>
+                <h4 class="mt-4" style="color: black;"> SQL Developer </h4>
             </a>
         </div>
 
